@@ -1,5 +1,5 @@
 <?php
-// Redirect logged-in users away from home
+
 require_once '../includes/session.php';
 if (isLoggedIn()) {
     header('Location: /LabOfJoy/aljury/categories.php');
