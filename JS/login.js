@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Get form inputs and error elements
+    
     const form     = document.getElementById('loginForm');
     const emailIn  = form.querySelector('[name="email"]');
     const passIn   = form.querySelector('[name="password"]');
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         passIn.value.length >= 6 ? clearError(passErr) : showError(passErr, 'At least 6 characters.');
     });
 
-    // Validate on submit before sending to server
+    
     form.addEventListener('submit', (e) => {
         let valid = true;
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
