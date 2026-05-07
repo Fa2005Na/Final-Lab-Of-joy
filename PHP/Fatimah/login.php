@@ -1,9 +1,9 @@
 <?php
-// Load DB and session helpers
+
 require_once '../includes/db.php';
 require_once '../includes/session.php';
 
-// Redirect already logged-in users to their correct page
+
 if (isLoggedIn()) {
     $dest = isAdmin() ? '/LabOfJoy/admin/index.php' : '/LabOfJoy/aljury/categories.php';
     header('Location: ' . $dest);
@@ -12,7 +12,7 @@ if (isLoggedIn()) {
 
 $error = '';
 
-// Validate credentials and start session
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email    = trim($_POST['email']    ?? '');
     $password = trim($_POST['password'] ?? '');
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($user && password_verify($password, $user['password'])) {
             setUserSession($user['id'], $user['email'], (int)$user['is_admin']);
-            // Send admin to dashboard, regular user to shop
+           
             if ($user['is_admin']) {
                 header('Location: /LabOfJoy/admin/index.php');
             } else {
