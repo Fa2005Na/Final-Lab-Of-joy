@@ -76,6 +76,8 @@ $info = $details[$product['name']] ?? [
   <meta charset="UTF-8">
   <title><?= htmlspecialchars($product['name'], ENT_QUOTES, 'UTF-8') ?></title>
   <link rel="stylesheet" href="miss (1).css">
+  <link rel="stylesheet" href="/LabOfJoy/accessibility.css">
+  <script src="/LabOfJoy/accessibility.js" defer></script>
 </head>
 <body>
 
@@ -125,6 +127,7 @@ $info = $details[$product['name']] ?? [
         <button type="submit" class="cartBtn">Add to Cart</button>
       </form>
       <br>
+      <a href="/LabOfJoy/lubna/checkout.php" class="cartBtn" style="display:block;text-align:center;margin-bottom:8px;">Proceed to Checkout</a>
       <a href="perfume_page.php" style="font-size:0.9rem;">← Back to Perfumes</a>
     </div>
 
